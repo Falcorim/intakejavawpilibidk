@@ -13,7 +13,8 @@ import frc.robot.Constants.IntakeConstants;
 
 public class IntakeSubsystem extends SubsystemBase {
 
-  private final WPI_TalonSRX intake_motor = new WPI_TalonSRX (IntakeConstants.intake_motor_id);//nasz motor
+  private final WPI_TalonSRX intake_motor1 = new WPI_TalonSRX (IntakeConstants.intake_motor_id);//nasz motor
+  private final WPI_TalonSRX intake_motor2 = new WPI_TalonSRX (IntakeConstants.intake_motor_id2);
   
   public IntakeSubsystem() {}
 
@@ -29,6 +30,7 @@ public class IntakeSubsystem extends SubsystemBase {
   }
 
   public void set_speed(double speed){
-    intake_motor.set(speed);
+    intake_motor1.set(speed);
+    intake_motor2.set(speed);
   }
 }
