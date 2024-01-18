@@ -16,7 +16,9 @@ public class IntakeSubsystem extends SubsystemBase {
   private final WPI_TalonSRX intake_motor1 = new WPI_TalonSRX (IntakeConstants.intake_motor_id);//nasz motor
   private final WPI_TalonSRX intake_motor2 = new WPI_TalonSRX (IntakeConstants.intake_motor_id2);
   
-  public IntakeSubsystem() {}
+  public IntakeSubsystem() {
+    intake_motor2.setInverted(true);//przy założeniu, że są odwrócone lustrzanie ofc
+  }
 
   public Command exampleMethodCommand() {//a to jest niepotrzebne, ale ładna templatka, więc może zostać na przyszłość
     return runOnce(
